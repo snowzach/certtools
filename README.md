@@ -19,8 +19,8 @@ server := &http.Server{
     }),
     TLSConfig: &tls.Config{
         Certificates: []tls.Certificate{cert},
-        MinVersion:   autocert.SecureTLSMinVersion(),
-        CipherSuites: autocert.SecureTLSCipherSuites(),
+        MinVersion:   certtools.SecureTLSMinVersion(),
+        CipherSuites: certtools.SecureTLSCipherSuites(),
     },
 }
 ```
