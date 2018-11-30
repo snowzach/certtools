@@ -54,6 +54,8 @@ var (
 		tls.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
 		tls.TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,
 		tls.TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256,
+		// This is not HTTP/2 compatiable but allows compatability for older browsers
+		tls.TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,
 	}
 )
 
