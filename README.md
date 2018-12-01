@@ -8,9 +8,15 @@ It includes parsers for taking strings/config options and enabling minimum TLS v
 It also includes some decent static defaults which can be used when creating a server.
 ```
 import (
+    "github.com/snowzach/certtools/autocert"
     "github.com/snowzach/certtools"
 )
 
+// Generate a self-signed certificate for localhost using static string as private key data (repeatable)
+// This programatically generates the same certificate every time and is only for development use
+cert, err = autocert.New(autocert.InsecureStringReader("static string"))
+
+// Build an http server using our self-signed cert and decent security ciphers and versions
 server := &http.Server{
     Addr: ":8443",
     Handler: http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
